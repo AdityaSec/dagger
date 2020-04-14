@@ -11,3 +11,4 @@ pip3 install -r requirement.txt
 ```
 python3 dagger.py
 ```
+Checkout cheatsheet.pdf , if you are stuck in identifying type of cipher.
