@@ -260,20 +260,6 @@ def crt(p,q,dp,dq,c):
 	    pt = pow(ct, d, n)
 	    return pt
 
-	def encryptRSA(p,q,e,pt):
-	    n = p * q
-	    phi = (p - 1) * (q - 1)
-	    gcd, a, b = egcd(e, phi)
-	    d = a
-	    ct = pow(pt, e, n)
-	    return ct
-
-	def convert(int_value):
-	   encoded = format(int_value, 'x')
-	   length = len(encoded)
-	   encoded = encoded.zfill(length+length%2)
-	   return encoded.decode('hex')
-
 	def mulinv(b, n):
 	    g, x, _ = egcd(b, n)
 	    if g == 1:
