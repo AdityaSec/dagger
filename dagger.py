@@ -923,12 +923,11 @@ def banner():
 	print(colored.green(banner1.renderText("     DAGGER")))
 	banner2 = Figlet(font='digital')
 	print(colored.yellow(banner2.renderText(" |||Your Crypto Assistant|||")))
-	print(colored.yellow(banner2.renderText("with <3 by D3v1LaL & 3cl1pS3")))
 try:
 	os.system('clear')
 	banner()
-	#print("\033[1;33;40m 	     May The Flag Be With You")
-	#time.sleep(1)
+	print("\033[1;33;40m 	     May The Flag Be With You")
+	time.sleep(1)
 	crypto()
 except KeyboardInterrupt :
 	sys.exit(0)	
