@@ -424,35 +424,6 @@ def bacon24(enc):
 		        break # emulating a do-while loop 
 		return decipher
 
-def vignerebrute(cipher):
-	endpoint="https://www.guballa.de/vigenere-solver"
-	data= {
-		'REQUEST_TOKEN':'YRZWknGxDD-nUhnrB29bQ99FYfpvlTuXJ0U5y2vTl9E',
-	    'cipher':cipher,
-	    'variant':'vigenere',
-	    'lang':'en',
-	    'key_len':'3-30',
-	    'break':'Break+Cipher'
-	}
-	cooky={'PHPSESSID':'pd2b3hvcq7f04qi5ko81vrdc74'}
-	r=requests.post(url = endpoint, data = data, cookies=cooky)
-
-	response= r.text
-	soup = BeautifulSoup(response,"html.parser")
-	op=soup.findAll('p')[6]
-	paragraphs = []
-	for x in op:
-	    paragraphs.append(str(x))
-	key=str(paragraphs[0])
-	key=key[22:-2]
-	op1=soup.findAll('textarea')[1]
-	paragraphs = []
-	for x in op1:
-	    paragraphs.append(str(x))
-	dec=str(paragraphs[0])
-	print("\033[1;32;40m[+][+]Probable Key:",key)
-	print("\033[1;32;40m[+][+]Probable PlainText:",dec)
-
 def vignereMatrix(r,c):
 
 	alpha ={'A':0,'B':1,'C':2,'D':3,'E':4,'F':5,'G':6,'H':7,'I':8,'J':9,'K':10,'L':11,'M':12,'N':13,'O':14,'P':15,'Q':16,'R':17,'S':18,'T':19,'U':20,'V':21,'W':22,'X':23,'Y':24,'Z':25	}
@@ -861,27 +832,13 @@ def crypto():
 		os.system('clear')
 		banner()
 		print('\033[1;33;40m [=> Vignere Decoder ')
-		print('\033[1;33;40m [1] Vignere With Key ')
-		print('\033[1;33;40m [2] Vignere Bruteforce ')
-		choice3=int(input('\n>'))
-		if choice3 == 1:
-			cipher=input('\033[1;33;40m[>] Cipher: ')
-			key=input('\033[1;33;40m[>] Key: ')
-			print("\033[1;32;40m[+][+]Found:",vigenere(cipher,key),'\n')
-			time.sleep(2)
-			status=int(input(('\033[1;33;40mPress 0 To Get Back To Crypto Menu OR Ctrl+c ')))
-			if status==0:
-				crypto()
-		elif choice3==2:
-			cipher=input('\033[1;33;40m[>] Cipher: ')
-			print("\033[1;32;40m This May Take A Minute Depending On Connectivity")
-			vignerebrute(cipher)
-			time.sleep(2)
-			status=int(input(('\033[1;33;40mPress 0 To Get Back To Crypto Menu OR Ctrl+c ')))
-			if status==0:
-				crypto()
-		else:
-			print("\033[1;31;40mWrong Option !!\n")			
+		cipher=input('\033[1;33;40m[>] Cipher: ')
+		key=input('\033[1;33;40m[>] Key: ')
+		print("\033[1;32;40m[+][+]Found:",vigenere(cipher,key),'\n')
+		time.sleep(2)
+		status=int(input(('\033[1;33;40mPress 0 To Get Back To Crypto Menu OR Ctrl+c ')))
+		if status==0:
+			crypto()		
 		
 	elif choice2==10:
 		os.system('clear')
@@ -898,7 +855,6 @@ def crypto():
 		cipher=input('\033[1;33;40m[>] Cipher: ')
 		key=input('\033[1;33;40m[>] Key: ')
 		print("\033[1;32;40m[+][+]Found:",vtd(cipher,key),'\n')
-
 
 	else:
 		print("\033[1;31;40mWrong Option !!\n")
