@@ -4,7 +4,8 @@ A Crypto-CTF Assistant For Saving You Time.
 
 ## Prerequisite
 ```
-sudo apt install libmpc-dev 
+cd dagger
+sudo apt install libmpc-dev python3 python3-pip
 pip3 install -r requirement.txt
 ``` 
 ## Usage
