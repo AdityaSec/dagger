@@ -12,7 +12,6 @@ import time
 import struct
 import sympy
 import Crypto.PublicKey.RSA as RSA
-from pyfiglet import Figlet
 from clint.textui import puts, colored, indent
 from Crypto.Util.number import *
 from fractions import gcd
@@ -591,8 +590,6 @@ def crypto():
 
 	choice2=int(input('\n>'))
 	if choice2 == 1:
-		os.system('clear')
-		banner()
 		print('\033[1;33;40m [=> Base Decoder ')
 		print('\033[1;33;40m [1] Base32 Decoder ')
 		print('\033[1;33;40m [2] Base64 Decoder ')
@@ -624,8 +621,6 @@ def crypto():
 
 
 	elif choice2==2:
-		os.system('clear')
-		banner()
 		print('\033[1;33;40m [=> Number Decoder ')
 		print('\033[1;33;40m [1] Binary Decoder ')
 		print('\033[1;33;40m [2] Octal Decoder ')
@@ -664,8 +659,6 @@ def crypto():
 			print("\033[1;31;40mWrong Option !!\n")		
 
 	elif choice2 == 3:
-		os.system('clear')
-		banner()
 		print('\033[1;33;40m [=> Rot Decoder ')
 		print('\033[1;33;40m [1] Rot(N) Decoder ')
 		print('\033[1;33;40m [2] Rot47 Decoder ')
@@ -689,8 +682,6 @@ def crypto():
 			print("\033[1;31;40mWrong Option !!\n")		
 
 	elif choice2 == 4:
-		os.system('clear')
-		banner()
 		print('\033[1;33;40m [=> Morse Decoder ')
 		cipher=input('\033[1;33;40m[>] Give Cipher: ')
 		print("\033[1;32;40m[+][+]Found:",morse(cipher),'\n')
@@ -700,8 +691,6 @@ def crypto():
 			crypto()
 
 	elif choice2 == 5:
-		os.system('clear')
-		banner()
 		print('\033[1;33;40m [=> RSA Decoder ')
 		print('\033[1;33;40m [1] Classic Attack ')
 		print('\033[1;33;40m [2] Cube Root Attack ')
@@ -774,8 +763,6 @@ def crypto():
 			print("\033[1;31;40mWrong Option !!\n")		
 
 	elif choice2==6:
-		os.system('clear')
-		banner()
 		print('\033[1;33;40m [=> DNA Decoder ')
 		cipher=input('\033[1;33;40m[>] Give Cipher: ')
 		print("\033[1;32;40m[+][+]Found:",dna(cipher),'\n')
@@ -785,8 +772,6 @@ def crypto():
 			crypto()
 
 	elif choice2==7:
-		os.system('clear')
-		banner()
 		print('\033[1;33;40m [=> brainf#ck Decoder ')
 		cipher=input('\033[1;33;40m[>] Give Cipher: ')
 		brainfuck(cipher)
@@ -796,8 +781,6 @@ def crypto():
 			crypto()
 
 	elif choice2==8:
-		os.system('clear')
-		banner()
 		print('\033[1;33;40m [=> Bacon Decoder ')
 		cipher=input('\033[1;33;40m[>] Give Cipher: ')
 		print("\033[1;32;40m[+][+]Found(26 Letter Bacon):",bacon26(cipher),'\n')
@@ -808,8 +791,6 @@ def crypto():
 			crypto()
 
 	elif choice2==9:
-		os.system('clear')
-		banner()
 		print('\033[1;33;40m [=> Vignere Decoder ')
 		cipher=input('\033[1;33;40m[>] Cipher: ')
 		key=input('\033[1;33;40m[>] Key: ')
@@ -820,16 +801,12 @@ def crypto():
 			crypto()		
 		
 	elif choice2==10:
-		os.system('clear')
-		banner()
 		print('\033[1;33;40m [=> XOR Decoder ')
 		cipher=input('\033[1;33;40m[>] Cipher: ')
 		key=input('\033[1;33;40m[>] Key: ')
 		print("\033[1;32;40m[+][+]Found:",xorr(key,cipher),'\n')
 
 	elif choice2==11:
-		os.system('clear')
-		banner()
 		print('\033[1;33;40m [=> Vertical Transposition Decoder ')
 		cipher=input('\033[1;33;40m[>] Cipher: ')
 		key=input('\033[1;33;40m[>] Key: ')
@@ -840,14 +817,9 @@ def crypto():
 
 #BANNNER
 def banner():
-	banner1 = Figlet(font='bulbhead')
-	print(colored.green(banner1.renderText("     DAGGER")))
-	banner2 = Figlet(font='digital')
-	print(colored.yellow(banner2.renderText(" |||Your Crypto Assistant|||")))
+	print("\033[1;31;40mDAGGER-Your Crypto Assistant")
 try:
-	os.system('clear')
-	banner()
-	print("\033[1;33;40m 	     May The Flag Be With You")
+	print("\033[1;33;40m  May The Flag Be With You")
 	time.sleep(1)
 	crypto()
 except KeyboardInterrupt :
