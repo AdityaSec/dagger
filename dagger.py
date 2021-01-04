@@ -14,7 +14,6 @@ import sympy
 import Crypto.PublicKey.RSA as RSA
 from clint.textui import puts, colored, indent
 from Crypto.Util.number import *
-from fractions import gcd
 from bs4 import BeautifulSoup
 
 def b32(enc):
