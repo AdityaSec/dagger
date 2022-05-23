@@ -1,0 +1,12 @@
+def decode(cipher):
+  message = ""
+  for i in range(0,len(cipher),4):
+    message = message + cipher[i]
+  return message
+
+choice = input("Enter 1 to decode a message in Parseltongue:  ")
+if choice == "1":
+  cipher = input("Type your cipher in Parseltongue: ")
+  print(decode(cipher))
+else:
+  print("Invalid option!")
